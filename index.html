@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Markup builder</title>
+  <!-- # prod
+   <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet"> 
+   / prod -->
+ <!--# local -->
+  <link href="styles/bootstrap.min.css" rel="stylesheet">
+ <!--/ local -->
+
+  <link rel="stylesheet" type="text/css" href="styles/main.css">
+</head>
+<body>
+
+<div class="container">
+<form id="chart-form" role="form">
+  <h4>Input Form</h4>
+  <input  class="large form-control" name='barchartheader' type='text' />
+  <input class='large form-control' name='barchartdeck' type='text'/> <br />
+  <input class='large form-control' name='amountreported' type='text'/>
+  <input class='large form-control' name='credit' type='text'/><br />
+  <input class='large form-control' name='legendtext' type='text'/>
+  <h4>Poll 1: <button class="btn btn-xs" id='toggle1'>Hide</button></h4>
+  <input class='medium' name='chart1-title' type='text'/><br>
+  <label>A:</label><input class='medium' name='chart1-A-name' type='text'/>
+  <input class='small' name='chart1-A-percent' type='text'/>
+  <input class='small' name='chart1-A-percentBar' type='text'/>%
+  <br>
+  <span>B:</span><input class='medium' name='chart1-B-name' type='text'/>
+  <input class='small' name='chart1-B-percent' type='text'/>
+  <input class='small' name='chart1-B-percentBar' type='text'/>%
+  <h4>Poll 2: <button class="btn btn-xs" id='toggle2'>Hide</button></h4> 
+  <input class='medium' name='chart2-title' type='text'/><br>
+  <label>A:</label><input class='medium' name='chart2-A-name' type='text'/>
+  <input class='small' name='chart2-A-percent' type='text'/>
+  <input class='small' name='chart2-A-percentBar' type='text'/>%
+  <br>
+  <span>B:</span><input class='medium' name='chart2-B-name' type='text'/>
+  <input class='small' name='chart2-B-percent' type='text'/>
+  <input class='small' name='chart2-B-percentBar' type='text'/>%
+  <div style="margin:8px;">
+    <button class="btn btn-default" id="updateBtn">Update</button>
+  </div>  
+</form>
+  
+<div id="output" class="output"></div>
+  <div id="markup"><button class="btn btn-sm" id='copyBtn'> Select HTML</button> (for copy/paste into HTML widget)
+  <textarea class="output"></textarea>
+  </div>
+</div>
+
+<script id="entry-template" type="text/x-handlebars-template"><div class="panel panel-default">
+<div class="page-header">
+  <h1>{{barchartheader}} <small>{{barchartdeck}}</small></h1>
+</div>
+<figure class="bar-chart">
+      <ul class="bar-chart-set chart1 {{chart1.isHidden}}">
+        <lh class="bar-chart-set-subhead">{{chart1.title}}</lh>
+        <li><div class="bar-chart-item pull-left">{{chart1.A.name}}<span class="glyphicon glyphicon-ok"></span></div>
+          <div class="progress">
+            <div class="progress-bar progress-bar-danger" role="progressbar" style="width: {{chart1.A.percentBar}}%;">{{chart1.A.percent}}</div>
+          </div>
+        </li> 
+        <li><div class="bar-chart-item pull-left">{{chart1.B.name}}</div>
+          <div class="progress">
+            <div class="progress-bar progress-bar-danger" role="progressbar" style="width: {{chart1.B.percentBar}}%;">{{chart1.B.percent}}</div>
+          </div>
+        </li> 
+      </ul>
+      <ul class="bar-chart-set chart2 {{chart2.isHidden}}">
+        <lh class="bar-chart-set-subhead">{{chart2.title}}</lh>
+        <li><div class="bar-chart-item pull-left">{{chart2.A.name}}<span class="glyphicon glyphicon-ok"></span></div>
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: {{chart2.A.percentBar}}%;">{{chart2.A.percent}}</div>
+          </div>
+        </li> 
+
+        <li><div class="bar-chart-item pull-left">{{chart2.B.name}}</div>
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: {{chart2.B.percentBar}}%;">{{chart2.B.percent}}</div>
+          </div>
+        </li> 
+      </ul>
+      <div class="bar-chart-l-legend">
+        <small class="bar-chart-set-legend"><span class="uni-icon-font icon-check"></span>{{legendtext}}</small>
+        <small class="bar-chart-set-status">{{amountreported}}</small>
+      </div>  
+  </figure>
+  <small class="bar-chart-set-credit">{{credit}}</small> 
+  </div>
+</script>
+
+ <!--# prod
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.0.min.js"></script>
+  <script type="text/javascript" src="https://cdn.rawgit.com/mawi12345/jquery-object-bind/master/jquery.objectbind.min.js"></script>
+  <script type="text/javascript" src="http://builds.emberjs.com/handlebars-1.0.0.js"></script> 
+ / prod -->
+
+ <!--# local -->
+  <script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
+  <script type="text/javascript" src="js/jquery.objectbind.min.js"></script>
+  <script type="text/javascript" src="js/handlebars-1.0.0.js"></script>
+ <!--/ local -->
+
+<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>

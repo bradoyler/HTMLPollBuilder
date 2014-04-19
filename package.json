@@ -1,0 +1,16 @@
+{
+  "name": "HTMLPollBuilder",
+  "version": "0.0.0",
+  "description": "micro-project for building markup for polls",
+  "main": "index.html",
+  "scripts": {
+    "test": ""
+  },
+  "keywords": [
+    "polls",
+    "markup",
+    "builder"
+  ],
+  "author": "Brad Oyler",
+  "license": "MIT"
+}
