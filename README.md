@@ -1,9 +1,15 @@
 # HTML Poll Builder
 
-#### a quick tool for building the markup for a poll on your blog/website
+#### A quick/simple tool for building the markup for a poll on your blog/website
 
-#### WIP
-
+------
+#### Get running (mac)
+```sh
+$ git clone https://github.com/bradoyler/HTMLPollBuilder.git     # pull down this repo
+$ cd $_                                                          # change into new diretory
+$ python -m SimpleHTTPServer                                     # run on http://0.0.0.0:8000
+```
+------
 #### Screenshots
 
 ![screen shot 2014-04-19 at 10 02 33 am](https://cloud.githubusercontent.com/assets/425966/2748585/5cbdd77c-c7cb-11e3-9d75-8940fda2fe9c.png)
