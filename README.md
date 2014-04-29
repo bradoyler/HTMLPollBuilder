@@ -1,7 +1,7 @@
 # HTML Poll Builder
 
 #### A quick/simple tool for building the markup for a poll on your blog/website
-
+![2014-04-28](https://cloud.githubusercontent.com/assets/425966/2824813/07f42888-cf3a-11e3-85ed-7045bd3fa6c2.jpg)
 ------
 #### Get running (mac)
 ```sh
